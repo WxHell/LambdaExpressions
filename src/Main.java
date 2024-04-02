@@ -48,25 +48,32 @@ public class Main {
                 System.out.println("[lat:"+lat+" lon:"+lng+"]");
         var firstPoint = coords.get(0);
         processPoint(firstPoint[0],firstPoint[1],p1);
+
         System.out.println("------");
         coords.forEach(s -> processPoint(s[0],s[1],p1));
         list.forEach(s -> System.out.println(s));
+
         System.out.println("-----");
         list.removeIf(s ->s.equalsIgnoreCase("bravo"));
         list.forEach(s -> System.out.println(s));
+
         System.out.println("------");
         list.addAll(List.of("echo","easy","earnest","bom"));
         list.forEach(s -> System.out.println(s));
+
         System.out.println("-----");
         list.removeIf(s -> s.startsWith("ea"));//ea ile başlayan kelimeleri siler
         list.forEach(s -> System.out.println(s));
+
         System.out.println("------");
         list.replaceAll(s -> s.charAt(0) + " -- "+s.toUpperCase());
         list.forEach(s -> System.out.println(s));
+
         System.out.println("----");
         String [] myString = new String[10];
         Arrays.setAll(myString,i -> "" + (i + 1) + ". "  );
         System.out.println(Arrays.toString(myString));
+
         System.out.println("----");
         Arrays.setAll(myString,i -> "" + (i + 1) + ". "
         + switch (i){
@@ -77,6 +84,7 @@ public class Main {
         }
         );
         System.out.println(Arrays.toString(myString));
+
         System.out.println("----");
         String [] names ={"Ann","Bob","Carol","David","Ed","Fred"};
         String [] randomList = randomlySelectedValues(15,names,
